@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/mdexample?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+    # 최신 mariadb는 publickkey를 요구하기 때문에 사용하지 않느 설정을 해주어야 함
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: mgyou
+    password: 1234
+  jpa:
+    open-in-view: false
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update #create한 후는 반드시 update로 변경할 것
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL55Dialect #방언 설정을 55를 붙여줘야 작동했다.
